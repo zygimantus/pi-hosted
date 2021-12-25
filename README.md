@@ -13,7 +13,7 @@ wget -qO- https://git.io/JwUkc | bash
 ```
 
 ### Pi OS Buster  
-On Oct 30, 2021 Pi OS bullseye was released and this is no longer needed.  Older Pi OS buster releases run an old version of libseccomp that is causing problems with many containers that are preventing them from running.  To fix this we need to manually install a newer version of libseccomp.  However we first need to check and see if you are running an older version.  To check please run sudo dpkg-query -W libseccomp.
+On Oct 30, 2021 Pi OS bullseye was released and this step for the most part is no longer needed.  Older Pi OS buster releases run an old version of libseccomp that is causing problems with many containers that are preventing them from running.  To fix this we need to manually install a newer version of libseccomp.  However we first need to check and see if you are running an older version.  To check please run sudo dpkg-query -W libseccomp.
 ```
 sudo dpkg-query -W libseccomp2
 ```
@@ -41,8 +41,8 @@ Click Settings, in the bottom-left corner, and paste the Portainer v2 json file 
 You're done! Now just click App Templates and deploy applications!
 
 #### Versions
-| Application  | Supported OS's | URL |
-| ------------- | ------------- | ------------- |
+| Application | Supported OS's | URL |
+|-------------|----------------|-----|
 | Portainer v2 Arm32 | Pi OS | https://raw.githubusercontent.com/novaspirit/pi-hosted/master/template/portainer-v2-arm32.json |
 | Portainer v2 Arm64 | Ubunutu 64, DietPI 64 | https://raw.githubusercontent.com/novaspirit/pi-hosted/master/template/portainer-v2-arm64.json |
 
