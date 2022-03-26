@@ -3401,6 +3401,16 @@
 					"name": "TZ"
 				},
 				{
+					"default": "/portainer/Files/AppData/Config/nginx-proxy-manager",
+					"label": "CONFIG_DIR",
+					"name": "CONFIG_DIR"
+				},
+				{
+					"default": "/portainer/Files/AppData/Config/nginx-proxy-manager",
+					"label": "DATABASE_DIR",
+					"name": "DATABASE_DIR"
+				},
+				{
 					"default": "password",
 					"label": "DATABASE_PASSWORD",
 					"name": "DATABASE_PASSWORD"
@@ -3421,7 +3431,7 @@
 			],
 			"repository": {
 				"stackfile": "stack/nginx-proxy-manager.yml",
-				"url": "https://github.com/pi-hosted/pi-hosted"
+				"url": "https://github.com/zygimantus/pi-hosted"
 			},
 			"restart_policy": "unless-stopped",
 			"title": "Nginx Proxy Manager",
