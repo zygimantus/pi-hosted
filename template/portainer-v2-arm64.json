@@ -4457,6 +4457,16 @@
 			"description": "Monitor your Raspberry Pi and Dockers using Grafana developed by oijkn. Please download grafana configs from his git https://github.com/oijkn/Docker-Raspberry-PI-Monitoring",
 			"env": [
 				{
+					"default": "/portainer/Files/AppData/Config/prometheus",
+					"label": "PROMETHEUS_CONFIG_DIR",
+					"name": "PROMETHEUS_CONFIG_DIR"
+				},
+				{
+					"default": "/portainer/Files/AppData/Config/grafana",
+					"label": "GRAFANA_CONFIG_DIR",
+					"name": "GRAFANA_CONFIG_DIR"
+				},
+				{
 					"default": "15d",
 					"label": "PROMETHEUS_RETENTION",
 					"name": "PROMETHEUS_RETENTION"
@@ -4470,7 +4480,7 @@
 			],
 			"repository": {
 				"stackfile": "stack/raspberrypi-monitoring.yml",
-				"url": "https://github.com/pi-hosted/pi-hosted"
+				"url": "https://github.com/zygimantus/pi-hosted"
 			},
 			"restart_policy": "unless-stopped",
 			"title": "Raspberry Pi Docker Monitor",
