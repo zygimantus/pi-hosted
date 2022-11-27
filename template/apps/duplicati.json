@@ -9,43 +9,52 @@
 	"description": "Free backup software to store encrypted backups online, Duplicati works with standard protocols like FTP, SSH, WebDAV as well as popular services like Microsoft OneDrive, Amazon Cloud Drive and S3, Google Drive, box.com, Mega, hubiC and many others.",
 	"env": [
 		{
-			"default": "1000",
+			"default": "0",
 			"label": "PUID",
 			"name": "PUID"
 		},
 		{
-			"default": "1000",
+			"default": "0",
 			"label": "PGID",
 			"name": "PGID"
+		},
+		{
+			"default": "America/New_York",
+			"label": "TZ",
+			"name": "TZ"
+		},		
+		{
+			"default": "/config",
+			"label": "CONFIG_DIR",
+			"name": "CONFIG_DIR"
+		},
+		{
+			"default": "/backups",
+			"label": "LOCAL_BACKUPS_DIR",
+			"name": "LOCAL_BACKUPS_DIR"
+		},
+		{
+			"default": "/source",
+			"label": "SOURCE_DIR",
+			"name": "SOURCE_DIR"
+		},
+		{
+			"default": "8200",
+			"label": "WEBUI_PORT",
+			"name": "WEBUI_PORT"
 		}
 	],
-	"image_arm32": "linuxserver/duplicati:v2.0.6.3-2.0.6.3_beta_2021-06-17-ls135",
-	"image_arm64": "linuxserver/duplicati:latest",
-	"image_amd64": "linuxserver/duplicati:latest",
 	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/duplicati-icon.png",
 	"name": "duplicati",
 	"officialDoc": "https://docs.linuxserver.io/images/docker-duplicati",
 	"platform": "linux",
-	"ports": [
-		"8200:8200/tcp"
-	],
-	"restart_policy": "unless-stopped",
+	"repository": {
+		"stackfile_arm32": "stack/duplicati.yml",
+		"stackfile_arm64": "stack/duplicati.yml",
+		"stackfile_amd64": "stack/duplicati.yml",
+		"url": "https://github.com/zygimantus/pi-hosted"
+	},	
 	"title": "Duplicati",
-	"type": 1,
-	"volumes": [
-		{
-			"bind": "/portainer/Files/AppData/Config/Duplicati",
-			"container": "/config"
-		},
-		{
-			"container": "/tmp"
-		},
-		{
-			"container": "/backups"
-		},
-		{
-			"container": "/source"
-		}
-	],
+	"type": 3,
 	"webpage": "https://www.duplicati.com/"
 }
