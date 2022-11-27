@@ -5,24 +5,67 @@
 		"Maintenance"
 	],
 	"description": "With watchtower you can update the running version of your containerized app simply by pushing a new image to the Docker Hub or your own image registry. Watchtower will pull down your new image, gracefully shut down your existing container and restart it with the same options that were used when it was deployed initially.",
-	"image_arm32": "containrrr/watchtower:latest",
-	"image_arm64": "containrrr/watchtower:latest",
-	"image_amd64": "containrrr/watchtower:latest",
+	"env": [
+		{
+			"default": "America/New_York",
+			"label": "TZ",
+			"name": "TZ"
+		},
+		{
+			"default": "0 0 16 ? * THU",
+			"label": "WATCHTOWER_SCHEDULE",
+			"name": "WATCHTOWER_SCHEDULE"
+		},
+		{
+			"default": "FromEmail@gmail.com",
+			"label": "WATCHTOWER_NOTIFICATION_EMAIL_FROM",
+			"name": "WATCHTOWER_NOTIFICATION_EMAIL_FROM"
+		},
+		{
+			"default": "ToEmail@gmail.com",
+			"label": "WATCHTOWER_NOTIFICATION_EMAIL_TO",
+			"name": "WATCHTOWER_NOTIFICATION_EMAIL_TO"
+		},
+		{
+			"default": "smtp.gmail.com",
+			"label": "WATCHTOWER_NOTIFICATION_EMAIL_SERVER",
+			"name": "WATCHTOWER_NOTIFICATION_EMAIL_SERVER"
+		},
+		{
+			"default": "password",
+			"label": "WATCHTOWER_NOTIFICATION_EMAIL_SERVER_PASSWORD",
+			"name": "WATCHTOWER_NOTIFICATION_EMAIL_SERVER_PASSWORD"
+		},
+		{
+			"default": "Pi Server Container Updates",
+			"label": "WATCHTOWER_NOTIFICATION_EMAIL_SUBJECTTAG",
+			"name": "WATCHTOWER_NOTIFICATION_EMAIL_SUBJECTTAG"
+		},
+		{
+			"default": "FromEmail@gmail.com",
+			"label": "WATCHTOWER_NOTIFICATION_EMAIL_SERVER_USER",
+			"name": "WATCHTOWER_NOTIFICATION_EMAIL_SERVER_USER"
+		},
+		{
+			"default": "587",
+			"label": "WATCHTOWER_NOTIFICATION_EMAIL_SERVER_PORT",
+			"name": "WATCHTOWER_NOTIFICATION_EMAIL_SERVER_PORT"
+		}
+	],	
 	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/watchtower.png",
 	"name": "watchtower",
 	"note": "It is recommended to manually update your containers but we're including this for those of you that don't care",
 	"officialDoc": "https://containrrr.dev/watchtower/usage-overview/",
 	"platform": "linux",
-	"command": "--cleanup",
+	"repository": {
+		"stackfile_arm32": "stack/watchtower.yml",
+		"stackfile_arm64": "stack/watchtower.yml",
+		"stackfile_amd64": "stack/watchtower.yml",
+		"url": "https://github.com/pi-hosted/pi-hosted"
+	},	
 	"restart_policy": "unless-stopped",
 	"title": "Watchtower",
 	"type": 1,
 	"videoID": "N.06",
-	"volumes": [
-		{
-			"bind": "/var/run/docker.sock",
-			"container": "/var/run/docker.sock"
-		}
-	],
 	"webpage": "https://containrrr.dev/watchtower/"
 }
