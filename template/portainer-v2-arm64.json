@@ -4938,16 +4938,6 @@
 					"name": "TZ"
 				},
 				{
-					"default": "/portainer/Files/AppData/Config/nginx-proxy-manager",
-					"label": "CONFIG_DIR",
-					"name": "CONFIG_DIR"
-				},
-				{
-					"default": "/portainer/Files/AppData/Config/nginx-proxy-manager",
-					"label": "DATABASE_DIR",
-					"name": "DATABASE_DIR"
-				},
-				{
 					"default": "password",
 					"label": "DATABASE_PASSWORD",
 					"name": "DATABASE_PASSWORD"
@@ -4968,7 +4958,7 @@
 			],
 			"repository": {
 				"stackfile": "stack/nginx-proxy-manager.yml",
-				"url": "https://github.com/zygimantus/pi-hosted"
+				"url": "https://github.com/pi-hosted/pi-hosted"
 			},
 			"restart_policy": "unless-stopped",
 			"title": "Nginx Proxy Manager v2 with Mysql [DEPRECATED]",
@@ -6572,16 +6562,6 @@
 			"description": "Monitor your Raspberry Pi and Dockers using Grafana developed by oijkn. Please download grafana configs from his git https://github.com/oijkn/Docker-Raspberry-PI-Monitoring",
 			"env": [
 				{
-					"default": "/portainer/Files/AppData/Config/prometheus",
-					"label": "PROMETHEUS_CONFIG_DIR",
-					"name": "PROMETHEUS_CONFIG_DIR"
-				},
-				{
-					"default": "/portainer/Files/AppData/Config/grafana",
-					"label": "GRAFANA_CONFIG_DIR",
-					"name": "GRAFANA_CONFIG_DIR"
-				},
-				{
 					"default": "15d",
 					"label": "PROMETHEUS_RETENTION",
 					"name": "PROMETHEUS_RETENTION"
@@ -6595,7 +6575,7 @@
 			],
 			"repository": {
 				"stackfile": "stack/raspberrypi-monitoring.yml",
-				"url": "https://github.com/zygimantus/pi-hosted"
+				"url": "https://github.com/pi-hosted/pi-hosted"
 			},
 			"restart_policy": "unless-stopped",
 			"title": "Raspberry Pi Docker Monitor",
@@ -8408,21 +8388,64 @@
 				"Maintenance"
 			],
 			"description": "With watchtower you can update the running version of your containerized app simply by pushing a new image to the Docker Hub or your own image registry. Watchtower will pull down your new image, gracefully shut down your existing container and restart it with the same options that were used when it was deployed initially.",
-			"image": "containrrr/watchtower:latest",
+			"env": [
+				{
+					"default": "America/New_York",
+					"label": "TZ",
+					"name": "TZ"
+				},
+				{
+					"default": "0 0 16 ? * THU",
+					"label": "WATCHTOWER_SCHEDULE",
+					"name": "WATCHTOWER_SCHEDULE"
+				},
+				{
+					"default": "FromEmail@gmail.com",
+					"label": "WATCHTOWER_NOTIFICATION_EMAIL_FROM",
+					"name": "WATCHTOWER_NOTIFICATION_EMAIL_FROM"
+				},
+				{
+					"default": "ToEmail@gmail.com",
+					"label": "WATCHTOWER_NOTIFICATION_EMAIL_TO",
+					"name": "WATCHTOWER_NOTIFICATION_EMAIL_TO"
+				},
+				{
+					"default": "smtp.gmail.com",
+					"label": "WATCHTOWER_NOTIFICATION_EMAIL_SERVER",
+					"name": "WATCHTOWER_NOTIFICATION_EMAIL_SERVER"
+				},
+				{
+					"default": "password",
+					"label": "WATCHTOWER_NOTIFICATION_EMAIL_SERVER_PASSWORD",
+					"name": "WATCHTOWER_NOTIFICATION_EMAIL_SERVER_PASSWORD"
+				},
+				{
+					"default": "Pi Server Container Updates",
+					"label": "WATCHTOWER_NOTIFICATION_EMAIL_SUBJECTTAG",
+					"name": "WATCHTOWER_NOTIFICATION_EMAIL_SUBJECTTAG"
+				},
+				{
+					"default": "FromEmail@gmail.com",
+					"label": "WATCHTOWER_NOTIFICATION_EMAIL_SERVER_USER",
+					"name": "WATCHTOWER_NOTIFICATION_EMAIL_SERVER_USER"
+				},
+				{
+					"default": "587",
+					"label": "WATCHTOWER_NOTIFICATION_EMAIL_SERVER_PORT",
+					"name": "WATCHTOWER_NOTIFICATION_EMAIL_SERVER_PORT"
+				}
+			],
 			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/watchtower.png",
 			"name": "watchtower",
 			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://containrrr.dev/watchtower/\" target=\"_blank\">https://containrrr.dev/watchtower/</a><br><b>Official Docker Documentation: </b><a href=\"https://containrrr.dev/watchtower/usage-overview/\" target=\"_blank\">https://containrrr.dev/watchtower/usage-overview/</a><br><br><br><b>Youtube Video: </b><a href=https://www.youtube.com/watch?v=q3wKqk8qVS8&list=PL846hFPMqg3jwkxcScD1xw2bKXrJVvarc&index=7 target=\"_blank\">Novaspirit Tech - Upgrading Portainer and Updating Containers</a><br><br>It is recommended to manually update your containers but we're including this for those of you that don't care",
 			"platform": "linux",
-			"command": "--cleanup",
+			"repository": {
+				"stackfile": "stack/watchtower.yml",
+				"url": "https://github.com/zygimantus/pi-hosted"
+			},
 			"restart_policy": "unless-stopped",
 			"title": "Watchtower",
-			"type": 1,
-			"volumes": [
-				{
-					"bind": "/var/run/docker.sock",
-					"container": "/var/run/docker.sock"
-				}
-			]
+			"type": 1
 		},
 		{
 			"categories": [
