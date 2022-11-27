@@ -1766,41 +1766,50 @@
 			"description": "Free backup software to store encrypted backups online, Duplicati works with standard protocols like FTP, SSH, WebDAV as well as popular services like Microsoft OneDrive, Amazon Cloud Drive and S3, Google Drive, box.com, Mega, hubiC and many others.",
 			"env": [
 				{
-					"default": "1000",
+					"default": "0",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "0",
 					"label": "PGID",
 					"name": "PGID"
+				},
+				{
+					"default": "America/New_York",
+					"label": "TZ",
+					"name": "TZ"
+				},
+				{
+					"default": "/config",
+					"label": "CONFIG_DIR",
+					"name": "CONFIG_DIR"
+				},
+				{
+					"default": "/backups",
+					"label": "LOCAL_BACKUPS_DIR",
+					"name": "LOCAL_BACKUPS_DIR"
+				},
+				{
+					"default": "/source",
+					"label": "SOURCE_DIR",
+					"name": "SOURCE_DIR"
+				},
+				{
+					"default": "8200",
+					"label": "WEBUI_PORT",
+					"name": "WEBUI_PORT"
 				}
 			],
-			"image": "linuxserver/duplicati:latest",
 			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/duplicati-icon.png",
 			"name": "duplicati",
 			"platform": "linux",
-			"ports": [
-				"8200:8200/tcp"
-			],
-			"restart_policy": "unless-stopped",
+			"repository": {
+				"stackfile": "stack/duplicati.yml",
+				"url": "https://github.com/zygimantus/pi-hosted"
+			},
 			"title": "Duplicati",
-			"type": 1,
-			"volumes": [
-				{
-					"bind": "/portainer/Files/AppData/Config/Duplicati",
-					"container": "/config"
-				},
-				{
-					"container": "/tmp"
-				},
-				{
-					"container": "/backups"
-				},
-				{
-					"container": "/source"
-				}
-			],
+			"type": 3,
 			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://www.duplicati.com/\" target=\"_blank\">https://www.duplicati.com/</a><br><b>Official Docker Documentation: </b><a href=\"https://docs.linuxserver.io/images/docker-duplicati\" target=\"_blank\">https://docs.linuxserver.io/images/docker-duplicati</a><br><br><br>"
 		},
 		{
