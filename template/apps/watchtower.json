@@ -65,7 +65,7 @@
 	},	
 	"restart_policy": "unless-stopped",
 	"title": "Watchtower",
-	"type": 1,
+	"type": 3,
 	"videoID": "N.06",
 	"webpage": "https://containrrr.dev/watchtower/"
 }

@@ -8445,7 +8445,7 @@
 			},
 			"restart_policy": "unless-stopped",
 			"title": "Watchtower",
-			"type": 1
+			"type": 3
 		},
 		{
 			"categories": [
