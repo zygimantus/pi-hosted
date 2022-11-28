@@ -46,7 +46,7 @@
 		"stackfile_arm32": "stack/nginx-proxy-manager.yml",
 		"stackfile_arm64": "stack/nginx-proxy-manager.yml",
 		"stackfile_amd64": "stack/nginx-proxy-manager.yml",
-		"url": "https://github.com/pi-hosted/pi-hosted"
+		"url": "https://github.com/zygimantus/pi-hosted"
 	},
 	"restart_policy": "unless-stopped",
 	"title": "Nginx Proxy Manager v2 with Mysql [DEPRECATED]",
