@@ -20,32 +20,34 @@
 			"default": "latest",
 			"label": "VERSION",
 			"name": "VERSION"
-		}
+		},
+		{
+			"default": "/config",
+			"label": "CONFIG_DIR",
+			"name": "CONFIG_DIR"
+		},
+		{
+			"default": "/movies",
+			"label": "MOVIES_DIR",
+			"name": "MOVIES_DIR"
+		},
+		{
+			"default": "/tv",
+			"label": "TV_DIR",
+			"name": "TV_DIR"
+		}		
 	],
-	"image_arm32": "linuxserver/plex:latest",
-	"image_arm64": "linuxserver/plex:latest",
-	"image_amd64": "linuxserver/plex:latest",
 	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/plex-icon.png",
 	"name": "plex",
-	"network": "host",
 	"officialDoc": "https://docs.linuxserver.io/images/docker-plex",
 	"platform": "linux",
-	"restart_policy": "unless-stopped",
+	"repository": {
+		"stackfile_arm32": "stack/plex.yml",
+		"stackfile_arm64": "stack/plex.yml",
+		"stackfile_amd64": "stack/plex.yml",
+		"url": "https://github.com/zygimantus/pi-hosted"
+	},
 	"title": "Plex",
-	"type": 1,
-	"volumes": [
-		{
-			"bind": "/portainer/Files/AppData/Config/Plex",
-			"container": "/config"
-		},
-		{
-			"bind": "/portainer/TV",
-			"container": "/tv"
-		},
-		{
-			"bind": "/portainer/Movies",
-			"container": "/movies"
-		}
-	],
+	"type": 3,
 	"webpage": "https://www.plex.tv/"
 }
