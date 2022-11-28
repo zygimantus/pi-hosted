@@ -15,27 +15,29 @@
 			"default": "1000",
 			"label": "PGID",
 			"name": "PGID"
+		},
+		{
+			"default": "America/New_York",
+			"label": "TZ",
+			"name": "TZ"
+		},		
+		{
+			"default": "/config",
+			"label": "CONFIG_DIR",
+			"name": "CONFIG_DIR"
 		}
 	],
-	"image_arm32": "linuxserver/heimdall:latest",
-	"image_arm64": "linuxserver/heimdall:latest",
-	"image_amd64": "linuxserver/heimdall:latest",
 	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/heimdall-icon.png",
 	"name": "heimdall",
 	"officialDoc": "https://docs.linuxserver.io/images/docker-heimdall",
 	"platform": "linux",
-	"ports": [
-		"7202:80/tcp",
-		"7203:443/tcp"
-	],
-	"restart_policy": "unless-stopped",
+	"repository": {
+		"stackfile_arm32": "stack/heimdall.yml",
+		"stackfile_arm64": "stack/heimdall.yml",
+		"stackfile_amd64": "stack/heimdall.yml",
+		"url": "https://github.com/pi-hosted/pi-hosted"
+	},
 	"title": "Heimdall",
-	"type": 1,
-	"volumes": [
-		{
-			"bind": "/portainer/Files/AppData/Config/Heimdall",
-			"container": "/config"
-		}
-	],
+	"type": 3,
 	"webpage": "https://heimdall.site/"
 }
