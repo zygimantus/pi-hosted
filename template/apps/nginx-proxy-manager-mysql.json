@@ -29,6 +29,16 @@
 			"default": "password",
 			"label": "MYSQL_ROOT_PASSWORD",
 			"name": "MYSQL_ROOT_PASSWORD"
+		},
+		{
+			"default": "/config_dir",
+			"label": "CONFIG_DIR",
+			"name": "CONFIG_DIR"
+		},
+		{
+			"default": "/database_dir",
+			"label": "DATABASE_DIR",
+			"name": "DATABASE_DIR"
 		}
 	],
 	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/proxy_mgr.png",
