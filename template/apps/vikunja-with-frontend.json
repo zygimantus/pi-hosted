@@ -41,6 +41,16 @@
 			"default": "",
 			"label": "MYSQL_ROOT_PASSWORD",
 			"name": "MYSQL_ROOT_PASSWORD"
+		},
+		{
+			"default": "/config_dir",
+			"label": "CONFIG_DIR",
+			"name": "CONFIG_DIR"
+		},
+		{
+			"default": "/database_dir",
+			"label": "DATABASE_DIR",
+			"name": "DATABASE_DIR"
 		}
 	],
 	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/vikunja.png",
@@ -52,7 +62,7 @@
 		"stackfile_arm32": "stack/vikunja.yml",
 		"stackfile_arm64": "stack/vikunja.yml",
 		"stackfile_amd64": "stack/vikunja.yml",
-		"url": "https://github.com/pi-hosted/pi-hosted/"
+		"url": "https://github.com/zygimantus/pi-hosted/"
 	},
 	"restart_policy": "unless-stopped",
 	"title": "Vikunja With Frontend",
