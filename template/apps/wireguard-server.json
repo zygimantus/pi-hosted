@@ -18,6 +18,11 @@
 			"name": "PASSWORD"
 		},
 		{
+			"default": "/config_dir",
+			"label": "CONFIG_DIR",
+			"name": "CONFIG_DIR"
+		},
+		{
 			"default": "51820",
 			"label": "WG_PORT",
 			"name": "WG_PORT"
@@ -31,11 +36,11 @@
 			"default": "10.8.0.x",
 			"label": "WG_DEFAULT_ADDRESS",
 			"name": "WG_DEFAULT_ADDRESS"
-                },
-                {
-                        "default": "0.0.0.0/0, ::/0",
-                        "label": "WG_ALLOWED_IPS",
-                        "name": "WG_ALLOWED_IPS"
+		},
+		{
+			"default": "0.0.0.0/0, ::/0",
+			"label": "WG_ALLOWED_IPS",
+			"name": "WG_ALLOWED_IPS"
 		}
 	],
 	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/wireguard.png",
@@ -48,7 +53,7 @@
 		"stackfile_arm32": "stack/wireguard-easy.yml",
 		"stackfile_arm64": "stack/wireguard-easy.yml",
 		"stackfile_amd64": "stack/wireguard-easy.yml",
-		"url": "https://github.com/pi-hosted/pi-hosted"
+		"url": "https://github.com/zygimantus/pi-hosted"
 	},
 	"title": "Wireguard Server",
 	"type": 3,

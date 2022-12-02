@@ -8614,6 +8614,11 @@
 					"name": "PASSWORD"
 				},
 				{
+					"default": "/config_dir",
+					"label": "CONFIG_DIR",
+					"name": "CONFIG_DIR"
+				},
+				{
 					"default": "51820",
 					"label": "WG_PORT",
 					"name": "WG_PORT"
@@ -8639,7 +8644,7 @@
 			"platform": "linux",
 			"repository": {
 				"stackfile": "stack/wireguard-easy.yml",
-				"url": "https://github.com/pi-hosted/pi-hosted"
+				"url": "https://github.com/zygimantus/pi-hosted"
 			},
 			"title": "Wireguard Server",
 			"type": 3,
