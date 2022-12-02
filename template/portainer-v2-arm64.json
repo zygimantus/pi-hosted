@@ -717,6 +717,21 @@
 					"name": "TZ"
 				},
 				{
+					"default": "bookstack_db",
+					"label": "DB_HOST",
+					"name": "DB_HOST"
+				},
+				{
+					"default": "bookstack",
+					"label": "DB_USER",
+					"name": "DB_USER"
+				},
+				{
+					"default": "bookstackapp",
+					"label": "DB_DATABASE",
+					"name": "DB_DATABASE"
+				},
+				{
 					"label": "DATABASE_PASSWORD",
 					"name": "DATABASE_PASSWORD"
 				},
@@ -729,6 +744,16 @@
 					"description": "Address to access Bookstack. If using a domain, add it here. If not set correctly the app will not be accessible",
 					"label": "APP_URL",
 					"name": "APP_URL"
+				},
+				{
+					"default": "/config_dir",
+					"label": "CONFIG_DIR",
+					"name": "CONFIG_DIR"
+				},
+				{
+					"default": "/database_dir",
+					"label": "DATABASE_DIR",
+					"name": "DATABASE_DIR"
 				},
 				{
 					"default": "6875",
