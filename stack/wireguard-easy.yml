@@ -19,7 +19,7 @@ services:
       - ${CONFIG_DIR}:/etc/wireguard
     ports:
       - "${WG_PORT}:51820/udp"
-      - "51821:51821/tcp"
+      - "${WEBUI_PORT}:51821/tcp"
     restart: unless-stopped
     cap_add:
       - NET_ADMIN

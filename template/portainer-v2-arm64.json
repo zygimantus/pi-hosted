@@ -8624,6 +8624,11 @@
 					"name": "WG_PORT"
 				},
 				{
+					"default": "51820",
+					"label": "WEBUI_PORT",
+					"name": "WEBUI_PORT"
+				},
+				{
 					"default": "1.1.1.1",
 					"label": "WG_DEFAULT_DNS",
 					"name": "WG_DEFAULT_DNS"
