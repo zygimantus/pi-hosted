@@ -14,30 +14,34 @@
 			"default": "1000",
 			"label": "PGID",
 			"name": "PGID"
+		},
+		{
+			"default": "Europe/London",
+			"label": "TZ",
+			"name": "TZ"
+		},		
+		{
+			"default": "/config",
+			"label": "CONFIG_DIR",
+			"name": "CONFIG_DIR"
+		},
+		{
+			"default": "/books",
+			"label": "BOOKS_DIR",
+			"name": "BOOKS_DIR"
 		}
 	],
-	"image_arm32": "linuxserver/calibre-web:latest",
-	"image_arm64": "linuxserver/calibre-web:latest",
-	"image_amd64": "linuxserver/calibre-web:latest",
 	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/calibre-web-icon.png",
 	"name": "calibre-web",
 	"officialDoc": "https://docs.linuxserver.io/images/docker-calibre-web",
 	"platform": "linux",
-	"ports": [
-		"8083:8083/tcp"
-	],
-	"restart_policy": "unless-stopped",
+	"repository": {
+		"stackfile_arm32": "stack/calibre-web.yml",
+		"stackfile_arm64": "stack/calibre-web.yml",
+		"stackfile_amd64": "stack/calibre-web.yml",
+		"url": "https://github.com/zygimantus/pi-hosted"
+	},	
 	"title": "Calibre Web",
-	"type": 1,
-	"volumes": [
-		{
-			"bind": "/portainer/Books",
-			"container": "/books"
-		},
-		{
-			"bind": "/portainer/Files/AppData/Config/Calibre-web",
-			"container": "/config"
-		}
-	],
+	"type": 3,
 	"webpage": "https://calibre-ebook.com/"
 }
